@@ -197,11 +197,11 @@ F8 Nuevo Caracter | F9 Borrar Pantalla | F10. Color del Caracter | F12. Grabar P
 
 
 ## Ejemplo
-Para dibujar un triángulo con base 10, orientado hacia arriba, en la posición (donde guste el usuario) con caracter *
+Para dibujar un triángulo con base 10, orientado hacia arriba, en la posición (donde guste el usuario) con caracter "*"
 
 1. Presiona F1.
 2. Ingresa 10 para la base.
-3. Ingresa 1 para la orientación (arriba).
+3. Ingresa 2 para la orientación (abajo).
 1.  Ingresa * para el carácter.
 
 El triángulo se dibujará en la consola en la posición especificada.

@@ -93,7 +93,7 @@ F8 Nuevo Caracter | F9 Borrar Pantalla | F10. Color del Caracter | F12. Grabar P
 - Parámetros:
   
 			1. Ingrese el tamaño de la linea: "Numero entero"  
-			2. Seleccione la orientación del rectangulo (1: Arriba, 2: Abajo, 3: Derecha, 4: Izquierda,                             5: Diagonal Derecha Arriba, 6: Diagonal Derecha Abajo, 7: Diagonal Izquierda Arriba,                    8: Diagonal Izquierda Abajo):
+			2. Seleccione la orientación del rectangulo (1: Arriba, 2: Abajo, 3: Derecha, 4: Izquierda,                           5: Diagonal Derecha Arriba, 6: Diagonal Derecha Abajo, 7: Diagonal Izquierda Arriba,                                  8: Diagonal Izquierda Abajo):
 ------------
 
 

@@ -68,7 +68,7 @@ Este programa permite dibujar varias figuras geométricas en la consola de Windo
          SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
    Mueve el cursor de la consola a la posición especificada.
 
-- #### Función TamConsola
+- #### Función Tamaño de Consola
        void TamConsola(int ancho, int alto) {
             COORD coord;
             coord.X = ancho;
@@ -400,8 +400,9 @@ F = Blanco brillante
 - #### Función Menu
 		void Menu() {
 				cursor(0, 0);
-				cout << "Elige una opcion: | 1. Triangulo (F1) | 2. Cuadrado (F2) | 3. Rectangulo (F3) | 4. Circulo (F4) |5. 
-        Linea (F5) |6. Rombo (F6) | 7. Hexagono (F7) |";
+				cout << "Elige una opcion: | 1. Triangulo (F1) | 2. Cuadrado (F2) | 3. Rectangulo (F3) | 4. Circulo 
+                (F4) |5. 
+                Linea (F5) |6. Rombo (F6) | 7. Hexagono (F7) |";
 				cursor(0, 1);
 				cout << " F8 Nuevo Caracter | F9 Borrar Pantalla |F10. Color del Caracter | ";
 				cout << " F12. Grabar Pantalla | Ctrl + A. Abrir Archivo | 0. Salir | ";
@@ -419,6 +420,7 @@ F = Blanco brillante
 				cout << string(400, ' ');
 				return caracter;
 			}
+   Pide al usuario que ingrese cualquier caracter ASCII para dibujar las figuras.
 1. ##### Pedir Tamaño
 		 int PedirTamano() {
 				int tamano;
@@ -429,38 +431,214 @@ F = Blanco brillante
 				cout << string(30, ' ');
 				return tamano;
 			}
-Pedir Dimensiones
-Pedir Orientacion
-Pedir OrientacionTriangulo
-Pedir OrientacionCuadrado
-Pedir OrientacionRectangulo
-Pedir OrientacionRombo
-Pedir OrientacionHexagono
+   Pide al usario el tamaño de la figura (Numero entero).
+1. ##### Pedir Dimensiones
+	   void PedirDimensiones(int &ancho, int &alto) {
+	    cursor(0, 2); // Mueve el cursor a la segunda línea
+	    cout << "\nIngresa el ancho: ";
+	    cin >> ancho;
+	    cursor(0, 2); // Limpia la línea donde se pidió el ancho
+	    cout << string(400, ' ');
+	    cursor(0, 2); // Mueve el cursor nuevamente a la segunda línea
+	    cout << "\nIngresa el alto: ";
+	    cin >> alto;
+	    cursor(0, 2); // Limpia la línea donde se pidió el alto
+	    cout << string(400, ' ');
+	   }
+   Pide al usuario la altura y ancho de ciertas figuras.   
+
+1. ##### Pedir Orientacion Triangulo
+	    int PedirOrientacionTriangulo() {
+		    int orientacion;
+		    cursor(0, 2); // Mueve el cursor a la segunda línea
+		    cout << "\nSelecciona la orientacion del cuadrado (1: Arriba, 2: Abajo): ";
+		    cin >> orientacion;
+		    cursor(0, 2); // Limpia la línea donde se pidió la orientación
+		    cout << string(400, ' ');
+		    return orientacion;
+		   }
+   Pide la orientación al usuario refetente al triangulo (1: Arriba, 2: Abajo)
+1. ##### Pedir Orientacion Cuadrado
+	   int PedirOrientacionCuadrado() {
+		    int orientacion;
+		    cursor(0, 2); // Mueve el cursor a la segunda línea
+		    cout << "\nSelecciona la orientacion del cuadrado (1: Arriba, 2: Abajo): ";
+		    cin >> orientacion;
+		    cursor(0, 2); // Limpia la línea donde se pidió la orientación
+		    cout << string(400, ' ');
+		    return orientacion;
+		 } 
+  Pide la orientación al usuario refetente al cuadrado (1: Arriba, 2: Abajo)
+1. ##### Pedir Orientacion Rectangulo
+		 int PedirOrientacionRectangulo() {
+		    int orientacion;
+		    cursor(0, 2); // Mueve el cursor a la segunda línea
+		    cout << "\nSelecciona la orientacion del Rectangulo (1: Arriba, 2: Abajo): ";
+		    cin >> orientacion;
+		    cursor(0, 2); // Limpia la línea donde se pidió la orientación
+		    cout << string(400, ' ');
+		    return orientacion;
+		}
+   Pide la orientación al usuario refetente al cuadrado (1: Arriba, 2: Abajo)
+1. ##### Pedir Orientacion Linea
+		 int PedirOrientacionRombo() {
+		    int orientacion;
+		    cursor(0, 2); // Mueve el cursor a la segunda línea
+		    cout << "\nSelecciona la orientacion del rombo (1: Arriba, 2: Abajo): ";
+		    cin >> orientacion;
+		    cursor(0, 2); // Limpia la línea donde se pidió la orientación
+		    cout << string(400, ' ');
+		    return orientacion;
+		}
+   Pide la orientación al usuario refetente al cuadrado (1: Arriba, 2: Abajo, 3: Derecha, 4: Izquierda, 5: Diagonal 
+   Derecha Arriba, 6: Diagonal Derecha Abajo, 7: Diagonal Izquierda Arriba, 8: Diagonal Izquierda Abajo)
+1. ##### Pedir Orientacion Rombo
+		 int PedirOrientacionRombo() {
+		    int orientacion;
+		    cursor(0, 2); // Mueve el cursor a la segunda línea
+		    cout << "\nSelecciona la orientacion del rombo (1: Arriba, 2: Abajo): ";
+		    cin >> orientacion;
+		    cursor(0, 2); // Limpia la línea donde se pidió la orientación
+		    cout << string(400, ' ');
+		    return orientacion;
+		}
+   Pide la orientación al usuario refetente al cuadrado (1: Arriba, 2: Abajo)
+1. ##### Pedir Orientacion Hexagono
+		 int PedirOrientacionHexagono() {
+		    int orientacion;
+		    cursor(0, 2); // Mueve el cursor a la segunda línea
+		    cout << "\nSelecciona la orientacion del hexagono (1: Vertical, 2: Horizontal): ";
+		    cin >> orientacion;
+		    cursor(0, 2); // Limpia la línea donde se pidió la orientación
+		    cout << string(400, ' ');
+		    return orientacion;
+		 } 
+    Pide la orientación al usuario refetente al cuadrado (1: Arriba, 2: Abajo)
+   
 Estas funciones solicitan al usuario los parámetros necesarios para dibujar las figuras.
 
-Guardar y Cargar el Estado de la Pantalla
-Función GrabarPantalla
-cpp
-Copiar código
-void GrabarPantalla();
-Guarda el estado actual de la pantalla en un archivo de texto.
+### Guardar y Cargar el Estado de la Pantalla
+1. #### Función GrabarPantalla
+		  void GrabarPantalla() {
+		    // Solicitar nombre y ruta del archivo
+		    string ruta;
+		    cursor(0, 2);
+		    cout << "\nIngrese la ruta y el nombre del archivo (con extension .txt): ";
+		    cin >> ruta;
+		    cursor(0, 2); // Limpia la línea donde se pidió la orientación
+		    cout << string(400, ' ');
+		
+		    // Capturar contenido de la pantalla
+		    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+		    CONSOLE_SCREEN_BUFFER_INFO csbi;
+		    GetConsoleScreenBufferInfo(hConsole, &csbi);
+		    int ancho = csbi.dwSize.X;
+		    int alto = csbi.dwSize.Y;
+		
+		    CHAR_INFO *buffer = new CHAR_INFO[ancho * alto];
+		    COORD bufferSize = { (SHORT)ancho, (SHORT)alto };
+		    COORD bufferCoord = { 0, 0 };
+		    SMALL_RECT readRegion = { 0, 0, (SHORT)(ancho - 1), (SHORT)(alto - 1) };
+		
+		    ReadConsoleOutput(hConsole, buffer, bufferSize, bufferCoord, &readRegion);
 
-Función AbrirArchivo
-cpp
-Copiar código
-void AbrirArchivo();
-Carga el contenido de un archivo de texto y lo muestra en la consola.
+		ofstream archivo(ruta);
+		    if (archivo.is_open()) {
+		        for (int i = 0; i < alto; ++i) {
+		            for (int j = 0; j < ancho; ++j) {
+		                archivo << buffer[i * ancho + j].Char.AsciiChar;
+		            }
+		            archivo << endl;
+		        }
+		        archivo.close();
+		        cursor(0, 2);
+		        cout << "\nPantalla guardada en " << ruta << endl;
+		        cursor(0, 2); // Limpia la línea donde se pidió la orientación
+		        cout << string(400, ' ');
+		    } else {
+		        cursor(0, 2);
+		        cout << "\nNo se pudo abrir el archivo " << ruta << endl;
+		        cursor(0, 2); // Limpia la línea donde se pidió la orientación
+		        cout << string(400, ' ');
+		    }
+		    delete[] buffer;
+		}
+   Guarda el estado actual de la pantalla en un archivo de texto.
 
-Función Principal
-main
-cpp
-Copiar código
-int main();
-La función principal del programa gestiona el ciclo de ejecución, presentando el menú y capturando las entradas del usuario para dibujar las figuras o realizar otras operaciones. A continuación se presenta una visión general del flujo de la función main:
+1. #### Función AbrirArchivo
+		void AbrirArchivo() {
+		    // Solicitar la ruta del archivo
+		    string ruta;
+		    cursor(0, 2);
+		    cout << "\nIngrese la ruta del archivo a abrir (con extension .txt): ";
+		    cin >> ruta;
+		    cursor(0, 2); // Limpia la línea donde se pidió la orientación
+		    cout << string(400, ' ');
+		
+		    // Leer el contenido del archivo
+		    ifstream archivo(ruta);
+		    if (archivo.is_open()) {
+		        string linea;
+		        int y = 0;
+		        BorrarPantalla(); // Borra la pantalla antes de mostrar el contenido del archivo
+		        while (getline(archivo, linea)) {
+		            cursor(0, y++);
+		            cout << linea;
+		        }
+		        archivo.close();
+		
+		    } else {
+		        cursor(0, 2);
+		        cout << "\nNo se pudo abrir el archivo " << ruta << endl;
+		    }
+		}
 
-Inicialización:
+	Carga el contenido de un archivo de texto y lo muestra en la consola.
 
-Configura el tamaño de la consola.
+## Función Principal
+#### main
+		  int main() {
+		    TamConsola(140, 40); // Tamaño de consola
+		
+		    int opcion;
+		    int x = 60, y = 15; // Posición inicial del cursor
+		    int tecla;
+		    char caracter = '*'; // Carácter predeterminado para dibujar figuras
+		    int color = 7; // Color por defecto (blanco)
+		
+		    Menu();
+		    cursor(x, y);
+		    // Captura la tecla presionada según su valor
+		    do {
+		         if ((GetAsyncKeyState(VK_CONTROL) & 0x8000) && (GetAsyncKeyState(0x41) & 0x8000)) { // Si se detecta 
+                Ctrl + A
+		            AbrirArchivo();
+		            Menu();
+		            cursor(x, y);
+		            continue;
+		        }
+		
+		        if (GetAsyncKeyState(VK_F12) & 0x8000) { // Si se detecta F12
+		            GrabarPantalla();
+		            Menu();
+		            cursor(x, y);
+		            continue;
+		        }
+		
+		        if (GetAsyncKeyState(VK_F9) & 0x8000) { // Si se detecta F9
+		            BorrarPantalla();
+		            x = 60;
+		            y = 15;
+		            cursor(x, y);
+		            continue;
+		        }
+  La función principal del programa gestiona el ciclo de ejecución, presentando el menú y capturando las entradas del 
+  usuario para dibujar las figuras o realizar otras operaciones. A continuación se presenta una visión general del 
+  flujo de la función main:
+
+## Inicialización:
+
+### Configura el tamaño de la consola.
 Llama a la función Menu para mostrar las opciones disponibles.
 Bucle Principal:
 

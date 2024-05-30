@@ -39,7 +39,7 @@ Este programa en realizado en el lenguaje C++ utilizando en motor CodeBlocks per
 
 ## Funcionalidades
 
-#### Menú Principal
+### Menú Principal
 Al iniciar el programa, se mostrará un menú con las siguientes opciones:
 
 **Elige una opción: | 1. Triángulo (F1) | 2. Cuadrado (F2) | 3. Rectángulo (F3) | 4. Círculo (F4) | 5. Línea (F5) | 6. Rombo (F6) | 7. Hexágono (F7) |
@@ -49,7 +49,7 @@ F8 Nuevo Caracter | F9 Borrar Pantalla | F10. Color del Caracter | F12. Grabar P
 
 
 
-#### Dibujar Figuras
+### Dibujar Figuras
 
 **Triángulo**
 - Atajo: F1

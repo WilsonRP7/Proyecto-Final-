@@ -131,21 +131,26 @@ F8 Nuevo Caracter | F9 Borrar Pantalla | F10. Color del Caracter | F12. Grabar P
 
 **Cambiar Color del Carácter**
  - Atajo: F10
-- Descripción: Cambia el color del carácter utilizado para dibujar las figuras.
-
+- Descripción:
+  
+		Ingrese el nuevo color (0-15
 ------------
 
 
 **Grabar Pantalla**
 - Atajo: F12
-- Descripción: Ingrese la ruta y el nombre del archivo (con extension .txt):
+- Descripción:
+
+     		Ingrese la ruta y el nombre del archivo para guardar (con extension .txt):
 
 ------------
 
 
 **Abrir Archivo**
 - Atajo: Ctrl + A
-- Descripción: Ingrese la ruta del archivo a abrir (con extension .txt):
+- Descripción:
+    
+  		 Ingrese la ruta del archivo a abrir (con extension .txt):
 
 ------------
 

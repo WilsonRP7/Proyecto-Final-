@@ -8,7 +8,7 @@
 
 using namespace std;
 
-// FunciÛn de colocaciÛn de cursor
+// Funci√≥n de colocaci√≥n de cursor
 void cursor(int x, int y) {
     COORD coord;
     coord.X = x;
@@ -16,7 +16,7 @@ void cursor(int x, int y) {
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
 }
 
-// FunciÛn de tamaÒo de pantalla y movilizaciÛn con teclas
+// Funci√≥n de tama√±o de pantalla y movilizaci√≥n con teclas
 void TamConsola(int ancho, int alto) {
     COORD coord;
     coord.X = ancho;
@@ -33,7 +33,7 @@ void TamConsola(int ancho, int alto) {
     SetConsoleWindowInfo(hConsole, TRUE, &rect);
 }
 
-// FunciÛn para dibujar el tri·ngulo
+// Funci√≥n para dibujar el tri√°ngulo
 void Triangulo(int base, int x, int y, int orientacion, char caracter) {
     int altura = static_cast<int>(sqrt(4) * base / 2);
     int inicioX = x - base / 2;
@@ -87,7 +87,7 @@ void Triangulo(int base, int x, int y, int orientacion, char caracter) {
         }
     }
 }
-// FunciÛn para dibujar el cuadrado
+// Funci√≥n para dibujar el cuadrado
 void Cuadrado(int lado, int orientacion, int x, int y, char caracter) {
     if (orientacion == 1) {
         for (int i = 0; i < lado; ++i) {
@@ -105,17 +105,17 @@ void Cuadrado(int lado, int orientacion, int x, int y, char caracter) {
         }
     }
 }
-// FunciÛn para dibujar el rect·ngulo
+// Funci√≥n para dibujar el rect√°ngulo
 void Rectangulo(int ancho, int alto, int x, int y, int orientacion, char caracter) {
     ancho= ancho + 2;
-    if (orientacion == 1 ) { // OrientaciÛn por defecto (horizontal)
+    if (orientacion == 1 ) { // Orientaci√≥n por defecto (horizontal)
         for (int i =0; i < alto; ++i) {
             for (int j = 0; j < ancho; ++j) {
                 cursor((x + j + 1) % 140, (y -0- i + 40) % 40);
                 cout <<caracter;
             }
         }
-    } else { // OrientaciÛn vertical
+    } else { // Orientaci√≥n vertical
         for (int i = 0; i < ancho; ++i) {
             for (int j = 0; j < alto; ++j) {
                 cursor((x + i + 1) % 140, (y + j + 1) % 40);
@@ -125,19 +125,19 @@ void Rectangulo(int ancho, int alto, int x, int y, int orientacion, char caracte
     }
 }
 
-// FunciÛn para dibujar el cÌrculo
+// Funci√≥n para dibujar el c√≠rculo
 void Circulo(int radio, int orientacion, int x0, int y0, char caracter) {
       for (int y = -radio; y <= radio; ++y) {
         for (int x = -radio; x <= radio; ++x) {
             if (x * x + y * y <= radio * radio) {
                 cursor((x0 + x) % 140, (y0 + y) % 40);
-                cout <<caracter; // Imprime el caracter en la posiciÛn del cÌrculo
+                cout <<caracter; // Imprime el caracter en la posici√≥n del c√≠rculo
             }
         }
     }
 }
 
-// FunciÛn para dibujar la lÌnea en diferentes orientaciones
+// Funci√≥n para dibujar la l√≠nea en diferentes orientaciones
 void Linea(int longitud, int orientacion, int x, int y, char caracter) {
     switch (orientacion) {
         case 1: // Arriba
@@ -191,7 +191,7 @@ void Linea(int longitud, int orientacion, int x, int y, char caracter) {
     }
 }
 
-// FunciÛn para dibujar el rombo
+// Funci√≥n para dibujar el rombo
 void Rombo(int lado, int orientacion, int x, int y, char caracter) {
     int diagonal = 2 * lado;
     int mitad = diagonal / 2;
@@ -240,14 +240,14 @@ void Rombo(int lado, int orientacion, int x, int y, char caracter) {
     }
 }
 
-// FunciÛn para dibujar el hex·gono
+// Funci√≥n para dibujar el hex√°gono
 void Hexagono(int lado, int orientacion, int x, int y, char caracter) {
     int altura = lado * 2 - 1;
     int ancho = lado * 4 - 3;
     int espacio = lado;
 
     if (orientacion == 2) { // Vertical
-        // Parte superior del hex·gono
+        // Parte superior del hex√°gono
         for (int i = 0; i < lado; ++i) {
             for (int j = 0; j < espacio - i - 1; ++j) {
                 cursor(x + j, y + i);
@@ -260,7 +260,7 @@ void Hexagono(int lado, int orientacion, int x, int y, char caracter) {
             cout << endl;
         }
 
-        // Parte inferior del hex·gono
+        // Parte inferior del hex√°gono
         for (int i = lado - 2; i >= 0; --i) {
             for (int j = 0; j < espacio - i - 1; ++j) {
                 cursor(x + j, y + altura - i - 1);
@@ -273,7 +273,7 @@ void Hexagono(int lado, int orientacion, int x, int y, char caracter) {
             cout << endl;
         }
     } else { // Horizontal
-        // Parte izquierda del hex·gono
+        // Parte izquierda del hex√°gono
          for (int i = 0; i < lado; ++i) {
             for (int j = 0; j < espacio - i - 1; ++j) {
                 cursor(x + j, y + i);
@@ -286,7 +286,7 @@ void Hexagono(int lado, int orientacion, int x, int y, char caracter) {
             cout << endl;
         }
 
-        // Parte inferior del hex·gono
+        // Parte inferior del hex√°gono
         for (int i = lado - 2; i >= 0; --i) {
             for (int j = 0; j < espacio - i - 1; ++j) {
                 cursor(x + j, y + altura - i - 1);
@@ -335,68 +335,68 @@ void Menu() {
 }
 char PedirCaracter() {
     char caracter;
-    cursor(0, 2); // Mueve el cursor a la segunda lÌnea
+    cursor(0, 2); // Mueve el cursor a la segunda l√≠nea
     cout << "\nIngresa el nuevo caracter para dibujar las figuras: ";
     cin >> caracter;
-    cursor(0, 2); // Limpia la lÌnea donde se pidiÛ el car·cter
+    cursor(0, 2); // Limpia la l√≠nea donde se pidi√≥ el car√°cter
     cout << string(400, ' ');
     return caracter;
 }
 int PedirTamano() {
     int tamano;
-    cursor(0, 2); // Mueve el cursor a la segunda lÌnea
+    cursor(0, 2); // Mueve el cursor a la segunda l√≠nea
     cout << "\nIngresa el tamano: \b";
     cin >> tamano;
-    cursor(0, 2); // Limpia la lÌnea donde se pidiÛ el tamaÒo
+    cursor(0, 2); // Limpia la l√≠nea donde se pidi√≥ el tama√±o
     cout << string(30, ' ');
     return tamano;
 }
 
 void PedirDimensiones(int &ancho, int &alto) {
-    cursor(0, 2); // Mueve el cursor a la segunda lÌnea
+    cursor(0, 2); // Mueve el cursor a la segunda l√≠nea
     cout << "\nIngresa el ancho: ";
     cin >> ancho;
-    cursor(0, 2); // Limpia la lÌnea donde se pidiÛ el ancho
+    cursor(0, 2); // Limpia la l√≠nea donde se pidi√≥ el ancho
     cout << string(400, ' ');
-    cursor(0, 2); // Mueve el cursor nuevamente a la segunda lÌnea
+    cursor(0, 2); // Mueve el cursor nuevamente a la segunda l√≠nea
     cout << "\nIngresa el alto: ";
     cin >> alto;
-    cursor(0, 2); // Limpia la lÌnea donde se pidiÛ el alto
+    cursor(0, 2); // Limpia la l√≠nea donde se pidi√≥ el alto
     cout << string(400, ' ');
 }
 int PedirOrientacionTriangulo() {
     int orientacion;
-    cursor(0, 2); // Mueve el cursor a la segunda lÌnea
+    cursor(0, 2); // Mueve el cursor a la segunda l√≠nea
     cout << "\nSelecciona la orientacion del cuadrado (1: Arriba, 2: Abajo): ";
     cin >> orientacion;
-    cursor(0, 2); // Limpia la lÌnea donde se pidiÛ la orientaciÛn
+    cursor(0, 2); // Limpia la l√≠nea donde se pidi√≥ la orientaci√≥n
     cout << string(400, ' ');
     return orientacion;
 }
 int PedirOrientacionCuadrado() {
     int orientacion;
-    cursor(0, 2); // Mueve el cursor a la segunda lÌnea
+    cursor(0, 2); // Mueve el cursor a la segunda l√≠nea
     cout << "\nSelecciona la orientacion del cuadrado (1: Arriba, 2: Abajo): ";
     cin >> orientacion;
-    cursor(0, 2); // Limpia la lÌnea donde se pidiÛ la orientaciÛn
+    cursor(0, 2); // Limpia la l√≠nea donde se pidi√≥ la orientaci√≥n
     cout << string(400, ' ');
     return orientacion;
 }
 int PedirOrientacionRectangulo() {
     int orientacion;
-    cursor(0, 2); // Mueve el cursor a la segunda lÌnea
+    cursor(0, 2); // Mueve el cursor a la segunda l√≠nea
     cout << "\nSelecciona la orientacion del Rectangulo (1: Arriba, 2: Abajo): ";
     cin >> orientacion;
-    cursor(0, 2); // Limpia la lÌnea donde se pidiÛ la orientaciÛn
+    cursor(0, 2); // Limpia la l√≠nea donde se pidi√≥ la orientaci√≥n
     cout << string(400, ' ');
     return orientacion;
 }
-int PedirOrientacion() {
+int PedirOrientacionLinea() {
     int orientacion;
-    cursor(0, 2); // Mueve el cursor a la segunda lÌnea
+    cursor(0, 2); // Mueve el cursor a la segunda l√≠nea
     cout << "\nSelecciona la orientacion (1: Arriba, 2: Abajo, 3: Derecha, 4: Izquierda, 5: Diagonal Derecha Arriba, 6: Diagonal Derecha Abajo, 7: Diagonal Izquierda Arriba, 8: Diagonal Izquierda Abajo): ";
     cin >> orientacion;
-    cursor(0, 2); // Limpia la lÌnea donde se pidiÛ la orientaciÛn
+    cursor(0, 2); // Limpia la l√≠nea donde se pidi√≥ la orientaci√≥n
     cout << string(600, ' ');
     return orientacion;
 }
@@ -407,25 +407,25 @@ int PedirOrientacionCirculo() {
 }
 int PedirOrientacionRombo() {
     int orientacion;
-    cursor(0, 2); // Mueve el cursor a la segunda lÌnea
+    cursor(0, 2); // Mueve el cursor a la segunda l√≠nea
     cout << "\nSelecciona la orientacion del rombo (1: Arriba, 2: Abajo): ";
     cin >> orientacion;
-    cursor(0, 2); // Limpia la lÌnea donde se pidiÛ la orientaciÛn
+    cursor(0, 2); // Limpia la l√≠nea donde se pidi√≥ la orientaci√≥n
     cout << string(400, ' ');
     return orientacion;
 }
 
 int PedirOrientacionHexagono() {
     int orientacion;
-    cursor(0, 2); // Mueve el cursor a la segunda lÌnea
+    cursor(0, 2); // Mueve el cursor a la segunda l√≠nea
     cout << "\nSelecciona la orientacion del hexagono (1: Vertical, 2: Horizontal): ";
     cin >> orientacion;
-    cursor(0, 2); // Limpia la lÌnea donde se pidiÛ la orientaciÛn
+    cursor(0, 2); // Limpia la l√≠nea donde se pidi√≥ la orientaci√≥n
     cout << string(400, ' ');
     return orientacion;
 }
 
-// FunciÛn para redibujar todas las figuras almacenadas
+// Funci√≥n para redibujar todas las figuras almacenadas
 void RedibujarFiguras() {
     for ( const auto& figura : figuras) {
         switch (figura.tipo) {
@@ -454,14 +454,14 @@ void RedibujarFiguras() {
     }
 }
 
-// FunciÛn para capturar y guardar el contenido de la pantalla
+// Funci√≥n para capturar y guardar el contenido de la pantalla
 void GrabarPantalla() {
     // Solicitar nombre y ruta del archivo
     string ruta;
     cursor(0, 2);
     cout << "\nIngrese la ruta y el nombre del archivo (con extension .txt): ";
     cin >> ruta;
-    cursor(0, 2); // Limpia la lÌnea donde se pidiÛ la orientaciÛn
+    cursor(0, 2); // Limpia la l√≠nea donde se pidi√≥ la orientaci√≥n
     cout << string(400, ' ');
 
     // Capturar contenido de la pantalla
@@ -490,25 +490,25 @@ void GrabarPantalla() {
         archivo.close();
         cursor(0, 2);
         cout << "\nPantalla guardada en " << ruta << endl;
-        cursor(0, 2); // Limpia la lÌnea donde se pidiÛ la orientaciÛn
+        cursor(0, 2); // Limpia la l√≠nea donde se pidi√≥ la orientaci√≥n
         cout << string(400, ' ');
     } else {
         cursor(0, 2);
         cout << "\nNo se pudo abrir el archivo " << ruta << endl;
-        cursor(0, 2); // Limpia la lÌnea donde se pidiÛ la orientaciÛn
+        cursor(0, 2); // Limpia la l√≠nea donde se pidi√≥ la orientaci√≥n
         cout << string(400, ' ');
     }
     delete[] buffer;
 }
 
-// FunciÛn para abrir un archivo y mostrar su contenido en la consola
+// Funci√≥n para abrir un archivo y mostrar su contenido en la consola
 void AbrirArchivo() {
     // Solicitar la ruta del archivo
     string ruta;
     cursor(0, 2);
     cout << "\nIngrese la ruta del archivo a abrir (con extension .txt): ";
     cin >> ruta;
-    cursor(0, 2); // Limpia la lÌnea donde se pidiÛ la orientaciÛn
+    cursor(0, 2); // Limpia la l√≠nea donde se pidi√≥ la orientaci√≥n
     cout << string(400, ' ');
 
     // Leer el contenido del archivo
@@ -530,17 +530,17 @@ void AbrirArchivo() {
 }
 
 int main() {
-    TamConsola(140, 40); // TamaÒo de consola
+    TamConsola(140, 40); // Tama√±o de consola
 
     int opcion;
-    int x = 60, y = 15; // PosiciÛn inicial del cursor
+    int x = 60, y = 15; // Posici√≥n inicial del cursor
     int tecla;
-    char caracter = '*'; // Car·cter predeterminado para dibujar figuras
+    char caracter = '*'; // Car√°cter predeterminado para dibujar figuras
     int color = 7; // Color por defecto (blanco)
 
     Menu();
     cursor(x, y);
-    // Captura la tecla presionada seg˙n su valor
+    // Captura la tecla presionada seg√∫n su valor
     do {
          if ((GetAsyncKeyState(VK_CONTROL) & 0x8000) && (GetAsyncKeyState(0x41) & 0x8000)) { // Si se detecta Ctrl + A
             AbrirArchivo();
@@ -568,7 +568,7 @@ int main() {
             cursor(0, 2);
             cout << "\nIngrese el nuevo color (0-15): ";
             cin >> color;
-            cursor(0, 2); // Limpia la lÌnea donde se pidiÛ la orientaciÛn
+            cursor(0, 2); // Limpia la l√≠nea donde se pidi√≥ la orientaci√≥n
             cout << string(400, ' ');
             continue;
         }
@@ -592,7 +592,7 @@ int main() {
                 x = (x + 1) % 140;
                 break;
 
-                case 59: { // Tecla 'F1' para dibujar un tri·ngulo
+                case 59: { // Tecla 'F1' para dibujar un tri√°ngulo
                 int base = PedirTamano();
                 int orientacion = PedirOrientacionTriangulo();
                 figuras.push_back({'T', base, 0, x, y, orientacion, caracter});
@@ -602,11 +602,11 @@ int main() {
            case 60: { // Tecla 'F2' para dibujar un cuadrado
                 int lado = PedirTamano();
                 int orientacion = PedirOrientacionCuadrado();
-                figuras.push_back({'C', lado,  orientacion, x, y,0, caracter}); // AÒadir la orientaciÛn al final
+                figuras.push_back({'C', lado,  orientacion, x, y,0, caracter}); // A√±adir la orientaci√≥n al final
                 RedibujarFiguras();
                 break;
             }
-            case 61: { // Tecla 'F3' para dibujar un rect·ngulo
+            case 61: { // Tecla 'F3' para dibujar un rect√°ngulo
                 int ancho, alto;
                 PedirDimensiones(ancho, alto);
                 int orientacion = PedirOrientacionRectangulo();
@@ -614,16 +614,16 @@ int main() {
                 RedibujarFiguras();
                 break;
             }
-            case 62: { // Tecla 'F4' para dibujar un cÌrculo
+            case 62: { // Tecla 'F4' para dibujar un c√≠rculo
                 int radio = PedirTamano();
                 int orientacion = PedirOrientacionCirculo();
-                figuras.push_back({'O', radio, orientacion, x, y,0, caracter}); // Utilizar el ˙ltimo car·cter ingresado
+                figuras.push_back({'O', radio, orientacion, x, y,0, caracter}); // Utilizar el √∫ltimo car√°cter ingresado
                 RedibujarFiguras();
                 break;
             }
-            case 63: { // Tecla 'F5' para dibujar una lÌnea
+            case 63: { // Tecla 'F5' para dibujar una l√≠nea
                 int longitud = PedirTamano();
-                int orientacion = PedirOrientacion();
+                int orientacion = PedirOrientacionLinea();
                 figuras.push_back({'L', longitud, orientacion, x, y,0, caracter});
                 RedibujarFiguras();
                 break;
@@ -635,7 +635,7 @@ int main() {
                 RedibujarFiguras();
                 break;
             }
-            case 65: { // Tecla 'F7' para dibujar un hex·gono
+            case 65: { // Tecla 'F7' para dibujar un hex√°gono
                 int lado = PedirTamano();
                 int orientacion = PedirOrientacionHexagono();
                 figuras.push_back({'H', lado, orientacion, x, y,0, caracter});
@@ -652,10 +652,10 @@ int main() {
             default:
                 break;
         }
-         // Cambiar el color del car·cter
+         // Cambiar el color del car√°cter
         SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
         Menu();
-        cursor(x, y); // Posiciona el cursor en la posiciÛn anterior
+        cursor(x, y); // Posiciona el cursor en la posici√≥n anterior
 
     } while (tecla != 48);
 

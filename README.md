@@ -190,3 +190,5 @@ Para dibujar un triángulo con base 10, orientado hacia arriba, en la posición 
 
 El triángulo se dibujará en la consola en la posición especificada.
 
+![image](https://github.com/WilsonRP7/Proyecto-Final-/assets/167270263/30c80ef6-1970-4104-b3a2-94605fecf650)
+

@@ -61,15 +61,15 @@ Este programa permite dibujar varias figuras geométricas en la consola de Windo
 		fstream: Para operaciones de entrada/salida con archivos.
 ### Funciones Principales
 - #### Función cursor
-        void cursor(int x, int y) {
-       		 COORD coord;
-      		  coord.X = x;
-       		 coord.Y = y;
-      		  SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
-Mueve el cursor de la consola a la posición especificada.
+      void cursor(int x, int y) {
+         COORD coord;
+         coord.X = x;
+         coord.Y = y;
+         SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+   Mueve el cursor de la consola a la posición especificada.
 
 - #### Función TamConsola
-        void TamConsola(int ancho, int alto) {
+       void TamConsola(int ancho, int alto) {
             COORD coord;
             coord.X = ancho;
             coord.Y = alto;
@@ -84,10 +84,10 @@ Mueve el cursor de la consola a la posición especificada.
       	  SetConsoleScreenBufferSize(hConsole, coord);
        	 SetConsoleWindowInfo(hConsole, TRUE, &rect);
         }
-Ajusta el tamaño de la ventana de la consola.
+    Ajusta el tamaño de la ventana de la consola.
 
-- ####Función Triangulo
-		void Triangulo(int base, int x, int y, int orientacion, char caracter) {
+- #### Función Triangulo
+      void Triangulo(int base, int x, int y, int orientacion, char caracter) {
 			int altura = static_cast<int>(sqrt(4) * base / 2);
 			int inicioX = x - base / 2;
 			if (orientacion == 1) { // Arriba del cursor
@@ -140,7 +140,7 @@ Ajusta el tamaño de la ventana de la consola.
 				}
 			}
     
-    Dibuja un triángulo en la consola.
+  Dibuja un triángulo en la consola.
 
 - #### Función Cuadrado
           
@@ -162,7 +162,7 @@ Ajusta el tamaño de la ventana de la consola.
 			}
 		}
 
-  Dibuja un cuadrado en la consola.
+   Dibuja un cuadrado en la consola.
 - #### Función Rectangulo
 		void Rectangulo(int ancho, int alto, int x, int y, int orientacion, char caracter) {
 			ancho= ancho + 2;
@@ -182,7 +182,7 @@ Ajusta el tamaño de la ventana de la consola.
 				}
 			}
 		}
-Dibuja un rectángulo en la consola.
+     Dibuja un rectángulo en la consola.
 
 - #### Función Circulo
        void Circulo(int radio, int orientacion, int x0, int y0, char caracter) {
@@ -194,7 +194,7 @@ Dibuja un rectángulo en la consola.
                 }
             }
         }
-Dibuja un círculo en la consola.
+     Dibuja un círculo en la consola.
 
 - #### Función Linea
 		void Linea(int longitud, int orientacion, int x, int y, char caracter) {
@@ -249,7 +249,7 @@ Dibuja un círculo en la consola.
 					break;
 				}
 			}
-Dibuja una línea en la consola.
+     Dibuja una línea en la consola.
 
 - #### Función Rombo
 		void Rombo(int lado, int orientacion, int x, int y, char caracter) {
@@ -299,7 +299,7 @@ Dibuja una línea en la consola.
 					}
 				}
 			}
-Dibuja un rombo en la consola.
+  Dibuja un rombo en la consola.
 
 - #### Función Hexagono
 		 void Hexagono(int lado, int orientacion, int x, int y, char caracter) {
@@ -361,7 +361,7 @@ Dibuja un rombo en la consola.
 					}
 				}
 			}
-Dibuja un hexágono en la consola.
+  Dibuja un hexágono en la consola.
 
 - #### Función BorrarPantalla
 		void BorrarPantalla() {
@@ -372,10 +372,11 @@ Dibuja un hexágono en la consola.
 
 				GetConsoleScreenBufferInfo(console, &screen);
 				FillConsoleOutputCharacterA(console, ' ', screen.dwSize.X * screen.dwSize.Y, topLeft, &written);
-				FillConsoleOutputAttribute(console, FOREGROUND_GREEN | FOREGROUND_RED | FOREGROUND_BLUE, screen.dwSize.X * screen.dwSize.Y, topLeft, &written);
+				FillConsoleOutputAttribute(console, FOREGROUND_GREEN | FOREGROUND_RED | FOREGROUND_BLUE, 
+                screen.dwSize.X * screen.dwSize.Y, topLeft, &written);
 				SetConsoleCursorPosition(console, topLeft);
 			}
-Limpia la pantalla de la consola.
+   Limpia la pantalla de la consola.
 
 
 
@@ -399,15 +400,16 @@ F = Blanco brillante
 - #### Función Menu
 		void Menu() {
 				cursor(0, 0);
-				cout << "Elige una opcion: | 1. Triangulo (F1) | 2. Cuadrado (F2) | 3. Rectangulo (F3) | 4. Circulo (F4) |5. Linea (F5) |6. Rombo (F6) | 7. Hexagono (F7) |";
+				cout << "Elige una opcion: | 1. Triangulo (F1) | 2. Cuadrado (F2) | 3. Rectangulo (F3) | 4. Circulo (F4) |5. 
+        Linea (F5) |6. Rombo (F6) | 7. Hexagono (F7) |";
 				cursor(0, 1);
 				cout << " F8 Nuevo Caracter | F9 Borrar Pantalla |F10. Color del Caracter | ";
 				cout << " F12. Grabar Pantalla | Ctrl + A. Abrir Archivo | 0. Salir | ";
 			}
-Muestra el menú de opciones en la consola.
+  Muestra el menú de opciones en la consola.
 
-- ####Funciones de Entrada del Usuario
-1. #####Pedir Caracter
+- #### Funciones de Entrada del Usuario
+1. ##### Pedir Caracter
 			char PedirCaracter() {
 				char caracter;
 				cursor(0, 2); // Mueve el cursor a la segunda línea
@@ -417,7 +419,7 @@ Muestra el menú de opciones en la consola.
 				cout << string(400, ' ');
 				return caracter;
 			}
-1. #####Pedir Tamaño
+1. ##### Pedir Tamaño
 		 int PedirTamano() {
 				int tamano;
 				cursor(0, 2); // Mueve el cursor a la segunda línea

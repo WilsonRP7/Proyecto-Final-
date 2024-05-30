@@ -371,31 +371,15 @@ Este programa permite dibujar varias figuras geométricas en la consola de Windo
 				DWORD written;
 
 				GetConsoleScreenBufferInfo(console, &screen);
-				FillConsoleOutputCharacterA(console, ' ', screen.dwSize.X * screen.dwSize.Y, topLeft, &written);
-				FillConsoleOutputAttribute(console, FOREGROUND_GREEN | FOREGROUND_RED | FOREGROUND_BLUE, 
-                screen.dwSize.X * screen.dwSize.Y, topLeft, &written);
+				FillConsoleOutputCharacterA(console, ' ', screen.dwSize.X * screen.dwSize.Y, topLeft, 
+        &written);
+				FillConsoleOutputAttribute(console, FOREGROUND_GREEN | FOREGROUND_RED | 
+        FOREGROUND_BLUE, 
+        screen.dwSize.X * screen.dwSize.Y, topLeft, &written);
 				SetConsoleCursorPosition(console, topLeft);
 			}
    Limpia la pantalla de la consola.
 
-
-
-0 = Negro
-1 = Azul
-2 = Verde
-3 = Aqua
-4 = Rojo
-5 = Púrpura
-6 = Amarillo
-7 = Blanco
-8 = Gris
-9 = Azul claro
-A = Verde claro
-B = Aqua claro
-C = Rojo claro
-D = Púrpura claro
-E = Amarillo claro
-F = Blanco brillante
 ## Menú y Entrada del Usuario
 - #### Función Menu
 		void Menu() {

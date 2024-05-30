@@ -401,8 +401,8 @@ F = Blanco brillante
 		void Menu() {
 				cursor(0, 0);
 				cout << "Elige una opcion: | 1. Triangulo (F1) | 2. Cuadrado (F2) | 3. Rectangulo (F3) | 4. Circulo 
-                (F4) |5. 
-                Linea (F5) |6. Rombo (F6) | 7. Hexagono (F7) |";
+ 		    (F4) |5. 
+  	    Linea (F5) |6. Rombo (F6) | 7. Hexagono (F7) |";
 				cursor(0, 1);
 				cout << " F8 Nuevo Caracter | F9 Borrar Pantalla |F10. Color del Caracter | ";
 				cout << " F12. Grabar Pantalla | Ctrl + A. Abrir Archivo | 0. Salir | ";
@@ -434,17 +434,17 @@ F = Blanco brillante
    Pide al usario el tamaño de la figura (Numero entero).
 1. ##### Pedir Dimensiones
 	   void PedirDimensiones(int &ancho, int &alto) {
-	    cursor(0, 2); // Mueve el cursor a la segunda línea
-	    cout << "\nIngresa el ancho: ";
-	    cin >> ancho;
-	    cursor(0, 2); // Limpia la línea donde se pidió el ancho
-	    cout << string(400, ' ');
-	    cursor(0, 2); // Mueve el cursor nuevamente a la segunda línea
-	    cout << "\nIngresa el alto: ";
-	    cin >> alto;
-	    cursor(0, 2); // Limpia la línea donde se pidió el alto
-	    cout << string(400, ' ');
-	   }
+		    cursor(0, 2); // Mueve el cursor a la segunda línea
+		    cout << "\nIngresa el ancho: ";
+		    cin >> ancho;
+		    cursor(0, 2); // Limpia la línea donde se pidió el ancho
+		    cout << string(400, ' ');
+		    cursor(0, 2); // Mueve el cursor nuevamente a la segunda línea
+		    cout << "\nIngresa el alto: ";
+		    cin >> alto;
+		    cursor(0, 2); // Limpia la línea donde se pidió el alto
+		    cout << string(400, ' ');
+		   }
    Pide al usuario la altura y ancho de ciertas figuras.   
 
 1. ##### Pedir Orientacion Triangulo
@@ -597,6 +597,10 @@ Estas funciones solicitan al usuario los parámetros necesarios para dibujar las
 
 ## Función Principal
 #### main
+  La función principal del programa gestiona el ciclo de ejecución, presentando el menú y capturando las entradas del 
+  usuario para dibujar las figuras o realizar otras operaciones. A continuación se presenta una visión general del 
+  flujo de la función main:
+	
 		  int main() {
 		    TamConsola(140, 40); // Tamaño de consola
 		
@@ -632,9 +636,7 @@ Estas funciones solicitan al usuario los parámetros necesarios para dibujar las
 		            cursor(x, y);
 		            continue;
 		        }
-  La función principal del programa gestiona el ciclo de ejecución, presentando el menú y capturando las entradas del 
-  usuario para dibujar las figuras o realizar otras operaciones. A continuación se presenta una visión general del 
-  flujo de la función main:
+  
 
 ## Inicialización:
 

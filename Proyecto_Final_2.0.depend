@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1717032186 source:c:\users\wilson\desktop\mariano galvez\2024 primero\programacion i\proyectos c++\proyecto_final_2.0\main.cpp
+	<iostream>
+	<windows.h>
+	<cmath>
+	<conio.h>
+	<vector>
+	<fstream>
+

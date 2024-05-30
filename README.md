@@ -53,7 +53,8 @@ F8 Nuevo Caracter | F9 Borrar Pantalla | F10. Color del Caracter | F12. Grabar P
 
 **Triángulo**
 - Atajo: F1
-- Parámetros: 
+- Parámetros:
+  
 			1. Ingrese el tamaño del triangulo: "Numero entero"  
 			2. Seleccione la orientación del triangulo  (1: Arriba, 2: Abajo)
 
@@ -62,6 +63,7 @@ F8 Nuevo Caracter | F9 Borrar Pantalla | F10. Color del Caracter | F12. Grabar P
 **Cuadrado**
 - Atajo: F2
 - Parámetros:
+  
 			1. Ingrese el tamaño del cuadrado: "Numero entero"   
 			2. Seleccione la orientación del cuadrado  (1: Arriba, 2: Abajo)
 ------------
@@ -70,6 +72,7 @@ F8 Nuevo Caracter | F9 Borrar Pantalla | F10. Color del Caracter | F12. Grabar P
 **Rectángulo**
 - Atajo: F3
 - Parámetros:
+  
 			1. Ingrese el tamaño del rectangulo: "Numero entero"  
 			2. Seleccione la orientación del rectangulo  (1: Arriba, 2: Abajo)
 
@@ -79,6 +82,7 @@ F8 Nuevo Caracter | F9 Borrar Pantalla | F10. Color del Caracter | F12. Grabar P
 **Círculo**
 - Atajo: F4
 - Parámetros:
+  
 			1. Ingrese el tamaño del circulo: "Numero entero"  
 
 ------------
@@ -86,7 +90,8 @@ F8 Nuevo Caracter | F9 Borrar Pantalla | F10. Color del Caracter | F12. Grabar P
 
 **Línea**
 - Atajo: F5
-- Parámetros: 
+- Parámetros:
+  
 			1. Ingrese el tamaño de la linea: "Numero entero"  
 			2. Seleccione la orientación del rectangulo (1: Arriba, 2: Abajo, 3: Derecha, 4: Izquierda,                             5: Diagonal Derecha Arriba, 6: Diagonal Derecha Abajo, 7: Diagonal Izquierda Arriba,                    8: Diagonal Izquierda Abajo):
 ------------
@@ -95,6 +100,7 @@ F8 Nuevo Caracter | F9 Borrar Pantalla | F10. Color del Caracter | F12. Grabar P
 **Rombo**
 - Atajo: F6
 - Parámetros:
+  
 			1. Ingrese el tamaño del rombo: "Numero entero"  
 			2. Seleccione la orientación del rombo  (1: Arriba, 2: Abajo)
 ------------
@@ -103,6 +109,7 @@ F8 Nuevo Caracter | F9 Borrar Pantalla | F10. Color del Caracter | F12. Grabar P
 **Hexágono**
 - Atajo: F7
 - Parámetros:
+  
 			1. Ingrese el tamaño del hexágono: "Numero entero"  
 			2. Seleccione la orientación del hexágono  (1: Arriba, 2: Abajo)
 ------------
@@ -131,14 +138,14 @@ F8 Nuevo Caracter | F9 Borrar Pantalla | F10. Color del Caracter | F12. Grabar P
 
 **Grabar Pantalla**
 - Atajo: F12
-- Descripción: Guarda el contenido actual de la pantalla en un archivo de texto.
+- Descripción: Ingrese la ruta y el nombre del archivo (con extension .txt):
 
 ------------
 
 
 **Abrir Archivo**
 - Atajo: Ctrl + A
-- Descripción: Abre un archivo de texto y muestra su contenido en la consola.
+- Descripción: Ingrese la ruta del archivo a abrir (con extension .txt):
 
 ------------
 

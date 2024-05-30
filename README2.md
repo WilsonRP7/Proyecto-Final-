@@ -400,9 +400,7 @@ F = Blanco brillante
 - #### Función Menu
 		void Menu() {
 				cursor(0, 0);
-				cout << "Elige una opcion: | 1. Triangulo (F1) | 2. Cuadrado (F2) | 3. Rectangulo (F3) | 4. Circulo 
- 		    (F4) |5. 
-  	    Linea (F5) |6. Rombo (F6) | 7. Hexagono (F7) |";
+				cout << "Elige una opcion: | 1. Triangulo (F1) | 2. Cuadrado (F2) | 3. Rectangulo (F3) | 4. Circulo (F4) |5. Linea (F5) |6. Rombo (F6) | 7. Hexagono (F7) |";
 				cursor(0, 1);
 				cout << " F8 Nuevo Caracter | F9 Borrar Pantalla |F10. Color del Caracter | ";
 				cout << " F12. Grabar Pantalla | Ctrl + A. Abrir Archivo | 0. Salir | ";

@@ -133,7 +133,23 @@ F8 Nuevo Caracter | F9 Borrar Pantalla | F10. Color del Caracter | F12. Grabar P
  - Atajo: F10
 - Descripción:
   
-		Ingrese el nuevo color (0-15
+		Ingrese el nuevo color (0-15)
+		0 = Negro
+		1 = Azul
+		2 = Verde
+		3 = Aqua
+		4 = Rojo
+		5 = Púrpura
+		6 = Amarillo
+		7 = Blanco
+		8 = Gris
+		9 = Azul claro
+		A = Verde claro
+		B = Aqua claro
+		C = Rojo claro
+		D = Púrpura claro
+		E = Amarillo claro
+		F = Blanco brillante
 ------------
 
 

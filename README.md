@@ -181,7 +181,7 @@ F8 Nuevo Caracter | F9 Borrar Pantalla | F10. Color del Caracter | F12. Grabar P
 ## Instrucciones de Uso
 1. Ejecuta el programa.
 2. Usa las teclas de función (F1 a F7) para seleccionar la figura que deseas dibujar.
-3. Ingresa los parámetros solicitados (tamaño, orientación, coordenadas, etc.).
+3. Ingresa los parámetros solicitados (tamaño, orientación, etc.).
 4. Usa F8 para cambiar el carácter de dibujo.
 5. Usa F9 para limpiar la pantalla.
 6. Usa F10 para cambiar el color del carácter.

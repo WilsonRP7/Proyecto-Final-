@@ -628,7 +628,7 @@ A continuación se presenta un ejemplo de cómo podría verse una sesión de uso
 
 - El programa muestra el menú de opciones.
 - El usuario selecciona "Dibujar Triángulo".
-- El programa solicita la base, la posición, la orientación y el carácter para el triángulo.
+- El programa solicita la base, la posición, la orientación  para el triángulo.
 - El triángulo se dibuja en la consola.
 - El usuario selecciona "Cambiar Carácter" y proporciona un nuevo carácter.
 - El usuario selecciona "Dibujar Cuadrado" y el cuadrado se dibuja con el nuevo carácter.

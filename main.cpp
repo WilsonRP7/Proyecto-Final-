@@ -575,24 +575,24 @@ int main() {
         tecla = _getwch();
 
         switch (tecla) {
-            case 66: // F8 cambiar caracter
+           case 66: // F8 cambiar caracter
                 caracter = PedirCaracter();
                 RedibujarFiguras();
                 break;
-            case 72: // Flecha arriba
+           case 72: // Flecha arriba
                 y = (y - 1 + 40) % 40;
                 break;
-            case 80: // Flecha abajo
+           case 80: // Flecha abajo
                 y = (y + 1) % 40;
                 break;
-            case 75: // Flecha izquierda
+           case 75: // Flecha izquierda
                 x = (x - 1 + 140) % 140;
                 break;
-            case 77: // Flecha derecha
+           case 77: // Flecha derecha
                 x = (x + 1) % 140;
                 break;
 
-                case 59: { // Tecla 'F1' para dibujar un triángulo
+           case 59: { // Tecla 'F1' para dibujar un triángulo
                 int base = PedirTamano();
                 int orientacion = PedirOrientacionTriangulo();
                 figuras.push_back({'T', base, 0, x, y, orientacion, caracter});

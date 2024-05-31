@@ -620,43 +620,21 @@ Estas funciones solicitan al usuario los parámetros necesarios para dibujar las
 		        }
   
 
-## Inicialización:
 
-### Configura el tamaño de la consola.
-Llama a la función Menu para mostrar las opciones disponibles.
-Bucle Principal:
 
-Captura la entrada del usuario para determinar la acción a realizar.
-Llama a las funciones correspondientes basadas en la selección del usuario (e.g., dibujar una figura, guardar la pantalla, cargar una pantalla guardada, borrar la pantalla, cambiar el carácter de dibujo, cambiar el color del texto).
-Lógica de Dibujado:
 
-Solicita los parámetros necesarios para la figura seleccionada (e.g., tamaño, orientación, carácter).
-Llama a la función de dibujo correspondiente con los parámetros proporcionados por el usuario.
-Operaciones de Guardado/Carga:
-
-Llama a GrabarPantalla para guardar el estado actual de la consola.
-Llama a AbrirArchivo para cargar un estado guardado previamente.
-Cambio de Carácter:
-
-Solicita el nuevo carácter al usuario y actualiza el carácter de dibujo.
-Cambio de Color:
-
-Solicita el código de color al usuario y actualiza el color del texto en la consola.
-Finalización:
-
-Permite al usuario salir del programa o volver al menú para realizar más acciones.
-Ejemplo de Ejecución
+## Ejemplo de Ejecución
 A continuación se presenta un ejemplo de cómo podría verse una sesión de uso del programa:
 
-El programa muestra el menú de opciones.
-El usuario selecciona "Dibujar Triángulo".
-El programa solicita la base, la posición, la orientación y el carácter para el triángulo.
-El triángulo se dibuja en la consola.
-El usuario selecciona "Cambiar Carácter" y proporciona un nuevo carácter.
-El usuario selecciona "Dibujar Cuadrado" y el cuadrado se dibuja con el nuevo carácter.
-El usuario selecciona "Cambiar Color" y proporciona un nuevo código de color.
-El color del texto en la consola cambia.
-El usuario selecciona "Guardar Pantalla" y el estado actual se guarda en un archivo.
-El usuario selecciona "Borrar Pantalla" y la consola se limpia.
-El usuario selecciona "Cargar Pantalla" y se carga el estado previamente guardado.
-El usuario selecciona "Salir" para finalizar el programa.
+- El programa muestra el menú de opciones.
+- El usuario selecciona "Dibujar Triángulo".
+- El programa solicita la base, la posición, la orientación y el carácter para el triángulo.
+- El triángulo se dibuja en la consola.
+- El usuario selecciona "Cambiar Carácter" y proporciona un nuevo carácter.
+- El usuario selecciona "Dibujar Cuadrado" y el cuadrado se dibuja con el nuevo carácter.
+- El usuario selecciona "Cambiar Color" y proporciona un nuevo código de color.
+- El color del texto en la consola cambia.
+- El usuario selecciona "Guardar Pantalla" y el estado actual se guarda en un archivo.
+- El usuario selecciona "Borrar Pantalla" y la consola se limpia.
+- El usuario selecciona "Cargar Pantalla" y se carga el estado previamente guardado.
+- El usuario selecciona "Salir" para finalizar el programa.

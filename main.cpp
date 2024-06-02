@@ -92,18 +92,34 @@ void Cuadrado(int lado, int orientacion, int x, int y, char caracter) {
     if (orientacion == 1) {
         for (int i = 0; i < lado; ++i) {
             for (int j = 0; j < lado; ++j) {
-                cursor((x + j) % 140, ((y - 1 - i)) % 40); // Arriba del cursor
+                cursor((x + j) % 140, ((y - 1 - i)) % 40);
                 cout <<caracter;
             }
         }
-    } else { // Abajo del cursor
+    } else if (orientacion == 2){ // Abajo del cursor
         for (int i = 0; i < lado; ++i) {
             for (int j = 0; j < lado; ++j) {
-                cursor((x + j) % 140, (y + i) % 40); // Abajo del cursor
+                cursor((x + j) % 140, (y + i) % 40);
                 cout << caracter;
             }
         }
-    }
+    }  else if (orientacion == 3){ // Derecha del cursor
+        for (int i = 0; i < lado; ++i) {
+            for (int j = 0; j < lado; ++j) {
+                cursor((x + 2 + j) % 140, (y - 1 + i) % 40);
+                cout << caracter;
+            }
+        }
+
+    }  else if (orientacion == 4){ // Izquierda del cursor
+        for (int i = 0; i < lado; ++i) {
+            for (int j = 0; j < lado; ++j) {
+                cursor((x -2 + j) % 140, (y - 1 + i) % 40);
+                cout << caracter;
+            }
+        }
+      }
+
 }
 // Función para dibujar el rectángulo
 void Rectangulo(int ancho, int alto, int x, int y, int orientacion, char caracter) {
@@ -367,7 +383,7 @@ void PedirDimensiones(int &ancho, int &alto) {
 int PedirOrientacionTriangulo() {
     int orientacion;
     cursor(0, 2); // Mueve el cursor a la segunda línea
-    cout << "\nSelecciona la orientacion del cuadrado (1: Arriba, 2: Abajo): ";
+    cout << "\nSelecciona la orientacion del cuadrado (1: Arriba, 2: Abajo, 3: Derecha, 4: Izquierda): ";
     cin >> orientacion;
     cursor(0, 2); // Limpia la línea donde se pidió la orientación
     cout << string(400, ' ');
@@ -376,7 +392,7 @@ int PedirOrientacionTriangulo() {
 int PedirOrientacionCuadrado() {
     int orientacion;
     cursor(0, 2); // Mueve el cursor a la segunda línea
-    cout << "\nSelecciona la orientacion del cuadrado (1: Arriba, 2: Abajo): ";
+    cout << "\nSelecciona la orientacion del cuadrado (1: Arriba, 2: Abajo, 3: Derecha, 4: Izquierda): ";
     cin >> orientacion;
     cursor(0, 2); // Limpia la línea donde se pidió la orientación
     cout << string(400, ' ');
@@ -503,6 +519,7 @@ void GrabarPantalla() {
 
 // Función para abrir un archivo y mostrar su contenido en la consola
 void AbrirArchivo() {
+    
     // Solicitar la ruta del archivo
     string ruta;
     cursor(0, 2);
@@ -533,30 +550,31 @@ int main() {
     TamConsola(140, 40); // Tamaño de consola
 
     int opcion;
-    int x = 60, y = 15; // Posición inicial del cursor
+    int x = 70, y = 15; // Posición inicial del cursor
     int tecla;
     char caracter = '*'; // Carácter predeterminado para dibujar figuras
     int color = 7; // Color por defecto (blanco)
 
     Menu();
     cursor(x, y);
+    
     // Captura la tecla presionada según su valor
     do {
-         if ((GetAsyncKeyState(VK_CONTROL) & 0x8000) && (GetAsyncKeyState(0x41) & 0x8000)) { // Si se detecta Ctrl + A
+         if ((GetAsyncKeyState(VK_CONTROL) & 0x8000) && (GetAsyncKeyState(0x41) & 0x8000)) { // Funcion Ctrl + A
             AbrirArchivo();
             Menu();
             cursor(x, y);
             continue;
         }
 
-        if (GetAsyncKeyState(VK_F12) & 0x8000) { // Si se detecta F12
+        if (GetAsyncKeyState(VK_F12) & 0x8000) { // Funcion F12
             GrabarPantalla();
             Menu();
             cursor(x, y);
             continue;
         }
 
-        if (GetAsyncKeyState(VK_F9) & 0x8000) { // Si se detecta F9
+        if (GetAsyncKeyState(VK_F9) & 0x8000) { // Funcion F9
             BorrarPantalla();
             x = 60;
             y = 15;
@@ -564,7 +582,7 @@ int main() {
             continue;
         }
 
-        if (GetAsyncKeyState(VK_F10) & 0x8000) { // Si se detecta F10
+        if (GetAsyncKeyState(VK_F10) & 0x8000) { // Funcion F10
             cursor(0, 2);
             cout << "\nIngrese el nuevo color (0-15): ";
             cin >> color;
@@ -575,24 +593,24 @@ int main() {
         tecla = _getwch();
 
         switch (tecla) {
-           case 66: // F8 cambiar caracter
+            case 66: // F8 cambiar caracter
                 caracter = PedirCaracter();
                 RedibujarFiguras();
                 break;
-           case 72: // Flecha arriba
+            case 72: // Flecha arriba
                 y = (y - 1 + 40) % 40;
                 break;
-           case 80: // Flecha abajo
+            case 80: // Flecha abajo
                 y = (y + 1) % 40;
                 break;
-           case 75: // Flecha izquierda
+            case 75: // Flecha izquierda
                 x = (x - 1 + 140) % 140;
                 break;
-           case 77: // Flecha derecha
+            case 77: // Flecha derecha
                 x = (x + 1) % 140;
                 break;
 
-           case 59: { // Tecla 'F1' para dibujar un triángulo
+                case 59: { // Tecla 'F1' para dibujar un triángulo
                 int base = PedirTamano();
                 int orientacion = PedirOrientacionTriangulo();
                 figuras.push_back({'T', base, 0, x, y, orientacion, caracter});
@@ -602,7 +620,7 @@ int main() {
            case 60: { // Tecla 'F2' para dibujar un cuadrado
                 int lado = PedirTamano();
                 int orientacion = PedirOrientacionCuadrado();
-                figuras.push_back({'C', lado,  orientacion, x, y,0, caracter}); // Añadir la orientación al final
+                figuras.push_back({'C', lado,  orientacion, x, y,0, caracter}); 
                 RedibujarFiguras();
                 break;
             }
@@ -617,7 +635,7 @@ int main() {
             case 62: { // Tecla 'F4' para dibujar un círculo
                 int radio = PedirTamano();
                 int orientacion = PedirOrientacionCirculo();
-                figuras.push_back({'O', radio, orientacion, x, y,0, caracter}); // Utilizar el último carácter ingresado
+                figuras.push_back({'O', radio, orientacion, x, y,0, caracter}); 
                 RedibujarFiguras();
                 break;
             }

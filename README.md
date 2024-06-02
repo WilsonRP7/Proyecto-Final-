@@ -56,7 +56,7 @@ F8 Nuevo Caracter | F9 Borrar Pantalla | F10. Color del Caracter | F12. Grabar P
 - Parámetros:
   
 			1. Ingrese el tamaño del triangulo: "Numero entero"  
-			2. Seleccione la orientación del triangulo  (1: Arriba, 2: Abajo)
+			2. Seleccione la orientación del triangulo  (1: Arriba, 2: Abajo, 3: Derecha, 4: Izquierda)
 
 ------------
 
@@ -65,7 +65,7 @@ F8 Nuevo Caracter | F9 Borrar Pantalla | F10. Color del Caracter | F12. Grabar P
 - Parámetros:
   
 			1. Ingrese el tamaño del cuadrado: "Numero entero"   
-			2. Seleccione la orientación del cuadrado  (1: Arriba, 2: Abajo)
+			2. Seleccione la orientación del cuadrado  (1: Arriba, 2: Abajo, 3: Derecha, 4: Izquierda)
 ------------
 
 

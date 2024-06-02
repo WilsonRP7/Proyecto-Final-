@@ -146,21 +146,37 @@ Este programa permite dibujar varias figuras geométricas en la consola de Windo
           
 		void Cuadrado(int lado, int orientacion, int x, int y, char caracter) {
 			if (orientacion == 1) {
-				for (int i = 0; i < lado; ++i) {
-					for (int j = 0; j < lado; ++j) {
-						cursor((x + j) % 140, ((y - 1 - i)) % 40); // Arriba del cursor
-						cout <<caracter;
-					}
-				}
-			} else { // Abajo del cursor
-				for (int i = 0; i < lado; ++i) {
-					for (int j = 0; j < lado; ++j) {
-						cursor((x + j) % 140, (y + i) % 40); // Abajo del cursor
-						cout << caracter;
-					}
-				}
+		        for (int i = 0; i < lado; ++i) {
+		            for (int j = 0; j < lado; ++j) {
+		                cursor((x + j) % 140, ((y - 1 - i)) % 40);
+		                cout <<caracter;
+		            }
+		        }
+			    } else if (orientacion == 2){ // Abajo del cursor
+			        for (int i = 0; i < lado; ++i) {
+			            for (int j = 0; j < lado; ++j) {
+			                cursor((x + j) % 140, (y + i) % 40);
+			                cout << caracter;
+			            }
+			        }
+			    }  else if (orientacion == 3){ // Derecha del cursor
+			        for (int i = 0; i < lado; ++i) {
+			            for (int j = 0; j < lado; ++j) {
+			                cursor((x + 2 + j) % 140, (y - 1 + i) % 40);
+			                cout << caracter;
+			            }
+			        }
+			
+			    }  else if (orientacion == 4){ // Izquierda del cursor
+			        for (int i = 0; i < lado; ++i) {
+			            for (int j = 0; j < lado; ++j) {
+			                cursor((x -2 + j) % 140, (y - 1 + i) % 40);
+			                cout << caracter;
+			            }
+			        }
+			      }
+			
 			}
-		}
 
    Dibuja un cuadrado en la consola.
 - #### Función Rectangulo
@@ -433,7 +449,7 @@ Este programa permite dibujar varias figuras geométricas en la consola de Windo
 	    int PedirOrientacionTriangulo() {
 		    int orientacion;
 		    cursor(0, 2); // Mueve el cursor a la segunda línea
-		    cout << "\nSelecciona la orientacion del cuadrado (1: Arriba, 2: Abajo): ";
+		    cout << "\nSelecciona la orientacion del cuadrado (1: Arriba, 2: Abajo, 3: Derecha, 4: Izquierda): ";
 		    cin >> orientacion;
 		    cursor(0, 2); // Limpia la línea donde se pidió la orientación
 		    cout << string(400, ' ');
@@ -444,7 +460,7 @@ Este programa permite dibujar varias figuras geométricas en la consola de Windo
 	   int PedirOrientacionCuadrado() {
 		    int orientacion;
 		    cursor(0, 2); // Mueve el cursor a la segunda línea
-		    cout << "\nSelecciona la orientacion del cuadrado (1: Arriba, 2: Abajo): ";
+		    cout << "\nSelecciona la orientacion del cuadrado (1: Arriba, 2: Abajo, 3: Derecha, 4: Izquierda): ";
 		    cin >> orientacion;
 		    cursor(0, 2); // Limpia la línea donde se pidió la orientación
 		    cout << string(400, ' ');
